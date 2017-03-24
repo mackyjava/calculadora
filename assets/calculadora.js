@@ -13,49 +13,44 @@ function guardar(input){
         document.getElementById("numeros").value="";
     }console.log(nuevo);
 }
-var resultado =[];
-function sumar(){
-  var operacion=nuevo.join("+")
-  var num =(Array.from(nuevo));
-  var res=0;
-  console.log(num);
-  for (var i=0;i<=num.length-1;i++){
-    res+=(Number(num[i]));
+var operacionAnterior =[];
+  function sumar(){
+    var ins=document.getElementById("numeros")
+    var numeroS= nuevo.toString().split("+")
+    var res=0;
+    for (var i=0;i<=numeroS.length-1;i++){
+    res+=Number(numeroS[i]);
 }
-  //resultado.push(res);
-   console.log(res);
+   operacionAnterior.push(res);
+   ins.innerHTML= res;
 }
 function restar(){
-  var operacion=nuevo.join("+")
-  var num =(Array.from(nuevo));
+  var ins=document.getElementById("numeros")
+  var numeroS= nuevo.toString().split("-")
   var res=0;
-  console.log(num);
-  for (var i=0;i<=num.length-1;i++){
-    console.log(res=(Number(num[i]))-(Number(num[i+1])));
-
-  }
-  console.log(res);
+  for (var i=0;i<=numeroS.length-2;i++){
+    res=Number(numeroS[i])- Number(numeroS[i+1]);
 }
-
-function mult(){
-  var operacion=nuevo.join("+")
-  var num =(Array.from(nuevo));
-  var res=0;
-  console.log(num);
-  for (var i=0;i<=num.length-1;i++){
-    res*=(Number(num[i]));
-
-  }
-  console.log(res);
+   operacionAnterior.push(res);
+   ins.innerHTML= res
+ }
+ function mult(){
+  var ins=document.getElementById("numeros")
+  var numeroS= nuevo.toString().split("*")
+  var res=1;
+  for (var i=0;i<=numeroS.length-1;i++){
+    res*=Number(numeroS[i])
 }
-function div(){
-  var operacion=nuevo.join("+")
-  var num =(Array.from(nuevo));
-  var res=0;
-  console.log(num);
-  for (var i=0;i<=num.length-1;i++){
-    res/=(Number(num[i]));
-
+   operacionAnterior.push(res);
+   ins.innerHTML= res;
+ }
+ function divi(){
+   var ins=document.getElementById("numeros")
+   var numeroS= nuevo.toString().split("/")
+   var res=0;
+   for (var i=0;i<=numeroS.length-2;i++){
+     res=Number(numeroS[i])/Number(numeroS[i+1])
+ }
+    operacionAnterior.push(res);
+    ins.innerHTML= res.toFixed(2);
   }
-  console.log(res.toFixed(2));
-}
