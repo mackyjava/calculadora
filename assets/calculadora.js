@@ -6,6 +6,7 @@
         entrada.value += character;
 }
 var nuevo=[];
+var check=Boolean;
 function guardar(input){
     var entry= document.getElementById("numeros");
      if(entry.value!=0){
@@ -14,16 +15,18 @@ function guardar(input){
     }console.log(nuevo);
 }
 var operacionAnterior =[];
-  function sumar(){
-    var ins=document.getElementById("numeros")
-    var numeroS= nuevo.toString().split("+")
-    var res=0;
-    for (var i=0;i<=numeroS.length-1;i++){
-    res+=Number(numeroS[i]);
-}
+    function sumar(){
+      var ins=document.getElementById("numeros")
+      var numeroS= nuevo.toString().split("+")
+      var res=0;
+      for (var i=0;i<=numeroS.length-1;i++){
+      res+=Number(numeroS[i]);
+  }
    operacionAnterior.push(res);
    ins.innerHTML= res;
+   check= true;
 }
+
 function restar(){
   var ins=document.getElementById("numeros")
   var numeroS= nuevo.toString().split("-")
@@ -32,7 +35,8 @@ function restar(){
     res=Number(numeroS[i])- Number(numeroS[i+1]);
 }
    operacionAnterior.push(res);
-   ins.innerHTML= res
+   ins.innerHTML= res;
+   check= true;
  }
  function mult(){
   var ins=document.getElementById("numeros")
@@ -54,3 +58,11 @@ function restar(){
     operacionAnterior.push(res);
     ins.innerHTML= res.toFixed(2);
   }
+function resultado(){
+  var aDb=nuevo.toString().split("");   //arrayDebusqueda
+  var ind = aDb.indexOf("+");
+  var operadores= document.getElementsByName('operador');
+  if(check=="true"&& operadores.value=="+"){
+      sumar();
+}
+}
