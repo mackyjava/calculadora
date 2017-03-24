@@ -8,23 +8,24 @@
     <form>
       <div align= "center">
        <input type="display" id ="numeros"/><br/>
-       <input type="button" value ="+"  name="operador" id ="suma" onclick="mostrar(this.form.value, '+');"/>
-       <input type= "button" value="-"  name="operador" onclick="mostrar(this.form.value, '-');"/>
-       <input type ="button" value ="*" name="operador" onclick="mostrar(this.form.value, '*');"/>
-       <input type ="button" value= "/" name="operador" onclick="mostrar(this.form.value, '/');"/><br/>
+       <input type ="hidden" id="resultado"/><br/>
+       <input type="button"  value ="+" class="operador" id ="suma"  onclick="mostrar(this.form.value, '+');operar(this.value);"/>
+       <input type= "button" value= "-"  class="operador" id ="resta" onclick="mostrar(this.form.value, '-');operar(this.value);"/>
+       <input type ="button" value ="*" class="operador" id ="mult"  onclick="mostrar(this.form.value, '*');operar(this.value);"/>
+       <input type ="button" value= "/" class="operador" id ="divi"  onclick="mostrar(this.form.value, '/');operar(this.value);"/><br/>
 
        <input type="button"  value="0" id ="0" onclick="mostrar(this.form.display, '0');"/>
-       <input type="button"  value="1" id="1" onclick="mostrar(this.form.display, '1');"/>
-       <input type= "button" value="2" id= "2" onclick="mostrar(this.form.display, '2');"/>
-       <input type ="button" value="3" id= "3" onclick="mostrar(this.form.display, '3');"/><br/>
+       <input type="button"  value="1" id= "1" onclick="mostrar(this.form.display, '1');"/>
+       <input type="button"  value="2" id= "2" onclick="mostrar(this.form.display, '2');"/>
+       <input type="button"  value="3" id= "3" onclick="mostrar(this.form.display, '3');"/><br/>
 
-       <input type ="button" value= "4"id = "4" onclick="mostrar(this.form.display, '4');"/>
-       <input type="button"  value="5" id ="5"  onclick="mostrar(this.form.display, '5');"/>
-       <input type="button"  value ="6" id="6"  onclick="mostrar(this.form.display, '6');"/>
-       <input type= "button" value="7" id= "7"  onclick="mostrar(this.form.display, '7');"/><br/>
-       <input type ="button" value ="8" id= "8" onclick="mostrar(this.form.display, '8');"/>
-       <input type ="button" value= "9"id = "9" onclick="mostrar(this.form.display, '9');"/>
-       <input type = "button"value= "="id ="igual" onclick="guardar();resultado();"/>
+       <input type="button" value= "4"id= "4" onclick="mostrar(this.form.display, '4');"/>
+       <input type="button" value= "5"id= "5" onclick="mostrar(this.form.display, '5');"/>
+       <input type="button" value= "6"id= "6" onclick="mostrar(this.form.display, '6');"/>
+       <input type="button" value= "7"id= "7" onclick="mostrar(this.form.display, '7');"/><br/>
+       <input type="button" value= "8"id= "8" onclick="mostrar(this.form.display, '8');"/>
+       <input type="button" value= "9"id ="9" onclick="mostrar(this.form.display, '9');"/>
+       <input type="button" value= "="id ="=" onclick="guardar();operaciones();"/>
      </form>
        <script src ="calculadora.js"></script>
     </body>
